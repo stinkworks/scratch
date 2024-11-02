@@ -1,0 +1,22 @@
+{
+  "name": "wdio-tests",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.2.2",
+    "@wdio/cli": "^9.2.8",
+    "@wdio/firefox-profile-service": "^9.2.2",
+    "@wdio/jasmine-framework": "^9.2.8",
+    "@wdio/json-reporter": "^9.2.2",
+    "@wdio/local-runner": "^9.2.8",
+    "@wdio/spec-reporter": "^9.2.8",
+    "@wdio/visual-service": "^6.2.1",
+    "wdio-html-nice-reporter": "^8.1.7",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "wdio-tests": "file:"
+  }
+}
