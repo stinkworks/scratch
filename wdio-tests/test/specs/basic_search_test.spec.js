@@ -7,7 +7,7 @@ it('Open google', async () => {
 
     await browser.keys('Return');
 
-//    await browser.pause(1000);; // esto es una negrada
+//    await browser.pause(1000); // esto es una negrada
 
     const link1 = await browser.$$("[class='LC20lb MBeuO DKV0Md']")[0];
     const link2 = await browser.$$("[class='LC20lb MBeuO DKV0Md']")[1]; 
@@ -23,7 +23,7 @@ it('Open google', async () => {
     const urltext4 = await link4.getText();
     const urltext5 = await link5.getText();
 
-    console.log ('Resiltados----->>>>>>>>>>>>>>>>>>>>>', '|',urltext1,'|',urltext2,'|',urltext3,'|',urltext4,'|',urltext5,'|'); // esto es una RE negrada djasjsdaj
+    console.log ('Resultados----->>>>>>>>>>>>>>>>>>>>>', '|',urltext1,'|',urltext2,'|',urltext3,'|',urltext4,'|',urltext5,'|'); // esto es una RE negrada djasjsdaj
     
     })
 });
