@@ -23,7 +23,7 @@ it('Open google', async () => {
     const urltext4 = await link4.getText();
     const urltext5 = await link5.getText();
 
-    console.log ('URLS----->>>>>>>>>>>>>>>>>>>>>', '|',urltext1,'|',urltext2,'|',urltext3,'|',urltext4,'|',urltext5,'|'); // esto es una RE negrada djasjsdaj
+    console.log ('Resiltados----->>>>>>>>>>>>>>>>>>>>>', '|',urltext1,'|',urltext2,'|',urltext3,'|',urltext4,'|',urltext5,'|'); // esto es una RE negrada djasjsdaj
     
     })
 });
