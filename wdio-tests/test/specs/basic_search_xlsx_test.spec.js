@@ -18,8 +18,10 @@ it('Open google', async () => {
     await browser.keys('Return');
 
     await browser.pause(1000); 
+    
     const links = await browser.$$("[jsname='UWckNb']");
     const titles = await browser.$$("h3.LC20lb.MBeuO.DKV0Md");
+
     const results = [];
 
     for (const [index] of links.entries()) {
@@ -30,7 +32,7 @@ it('Open google', async () => {
         const testTitle = await title.getText('innerText');
         const testLink = await link.getAttribute('href');
 
-        console.log(`Link ${index + 1}: ${testLink}`);
+    //    console.log(`Link ${index + 1}: ${testLink}`);
 
         results.push({
             Index: index + 1,
@@ -48,18 +50,8 @@ if (results.length > 0) {
     XLSX.utils.book_append_sheet(workBook, workSheet, "URLs");
     XLSX.writeFile(workBook, "L:/Repos/scratch/wdio-tests/test/urls.xlsx");
     console.log('si esto aparece es pq el file quedó escrito :3');
-}}
+        }}
 
-  //for (var link of links){
-  //    const textlink = await link.getText();
-  //    console.log (textlink);
-   //    fs.appendFile("L:/Repos/scratch/wdio-tests/test/test.txt",textlink,(error) => {
-   //        if (error) throw error;
-   //    });
- 
-//   const workSheet = XLSX.utils.json_to_sheet(results);
-//   const workBook = XLSX.utils.book_new();
-//   XLSX.utils.book_append_sheet(workBook, workSheet, "Sheet 1");
-//   XLSX.writeFile(workBook, "test.xlsx");
+    )}
 
-)});
+);
