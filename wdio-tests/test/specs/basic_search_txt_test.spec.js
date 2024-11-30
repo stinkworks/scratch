@@ -1,12 +1,14 @@
 import * as fs from 'node:fs';
-// import * as XLSX from 'node:xlsx';
 
 describe ('Tests homework (?', () => {
 
-fs.truncate("L:/Repos/scratch/wdio-tests/test/test.txt", (err) => {  // esto deletea el file :)
+    beforeAll(() => {
+    const filePath = "L:/Repos/scratch/wdio-tests/test/test.txt";
+fs.truncate(filePath, (err) => {  // esto deletea el file :)
     if (err) throw err;
     console.log('test.txt was cleared');
     });
+});
 
 it('Open google', async () => {
     await browser.url('https://google.com/');
@@ -17,17 +19,19 @@ it('Open google', async () => {
 
 
     await browser.pause(1000); 
-    const links = await browser.$$("[jsname='UWckNb']")
+    const links = await browser.$$("[jsname='UWckNb']");
 
 
 
     for (var link of links){
+        const filePath = "L:/Repos/scratch/wdio-tests/test/test.txt";
         const textlink = await link.getText();
         console.log (textlink);
-        fs.appendFile("L:/Repos/scratch/wdio-tests/test/test.txt",textlink,(error) => {
+        fs.appendFile(filePath,textlink,(error) => {
             if (error) throw error;
         });
     }
+
 
 
     // await browser.pause(5000); esto es una negrada
