@@ -19,16 +19,22 @@ it('Open google', async () => {
 
     await browser.pause(1000); 
     const links = await browser.$$("[jsname='UWckNb']");
+    const titles = await browser.$$("h3.LC20lb.MBeuO.DKV0Md");
     const results = [];
 
-    for (const [index, /*title = await $$("h3.LC20lb.MBeuO.DKV0Md"),*/ link = await $$("[jsname='UWckNb']")] of links.entries()) {
-  //      const testTitle = await title.getAttribute('innerHTML');
+    for (const [index] of links.entries()) {
+
+        const link = links[index];
+        const title = titles[index];
+
+        const testTitle = await title.getText('innerText');
         const testLink = await link.getAttribute('href');
+
         console.log(`Link ${index + 1}: ${testLink}`);
 
         results.push({
             Index: index + 1,
-    //        Title: testTitle || "No Title", // el || es un or, big important
+            Title: testTitle || "No Title", // el || es un or, big important
             Link: testLink || "No URL",
         });
 
