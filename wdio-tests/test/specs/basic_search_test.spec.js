@@ -1,6 +1,12 @@
 import * as fs from 'node:fs';
+// import * as XLSX from 'node:xlsx';
 
 describe ('Tests homework (?', () => {
+
+fs.truncate("L:/Repos/scratch/wdio-tests/test/test.txt", (err) => {  // esto deletea el file :)
+    if (err) throw err;
+    console.log('test.txt was cleared');
+    });
 
 it('Open google', async () => {
     await browser.url('https://google.com/');
@@ -10,7 +16,7 @@ it('Open google', async () => {
     await browser.keys('Return');
 
 
-
+    await browser.pause(1000); 
     const links = await browser.$$("[jsname='UWckNb']")
 
 
